@@ -1,0 +1,50 @@
+﻿@model ImageSandpit.Models.TestBookDetailViewModel
+
+@{
+    ViewBag.Title = "Test Book";
+}
+
+<div>
+    <div class="panel-title">
+        <h1>Test Book</h1>
+    </div>
+
+    <div class="panel-default">
+        <br />
+        <div class="row">
+            <div class="col-lg-4">CustomerId:</div>
+            <div class="col-lg-8">@Model.CustomerId</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">TemplateId:</div>
+            <div class="col-lg-8">@Model.TemplateId</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">Character Name:</div>
+            <div class="col-lg-8">@Model.Character.Name</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">PersonalMessage:</div>
+            <div class="col-lg-8">@Model.PersonalMessage</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel-title">
+            <h1>Pages</h1>
+        </div>
+        <div class="panel-default">
+            <div>
+                @foreach (var page in Model.Pages)
+                {
+                    <div>
+                        <div><h3>Page number: @page.Index</h3></div>
+                        <div>
+                            <img src=@page.ImageFileRelative />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

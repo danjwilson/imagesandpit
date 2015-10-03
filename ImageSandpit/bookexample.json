@@ -1,0 +1,54 @@
+﻿{
+    Book: {
+        Id: "123456",
+        CustomerId: "danwilson@live.co.uk",
+        TemplateId: "Amazing",
+        PersonalMessage: "Happy Birthday to our dear little Michael",
+        Character: {
+            Name: "Michael",
+            Sex: "Male",
+            Hair: "ShortGinger",
+            Clothes: "RedFootballKit"
+        },
+        Pages: [
+            {
+                Index: 1,
+                Type: "LeftPage",
+                PageTemplateId: "WelcomeLeft",
+                Layers: [
+                    {
+                        StackIndex: 0,
+                        File: "./Amazing/Welcome/DefaultLeft.png"
+                    },
+                    {
+                        StackIndex: 1,
+                        File: "./Amazing/Welcome/Character/EthnicitySex/WhiteBoy.png"
+                    },
+                    {
+                        StackIndex: 3,
+                        File: "./Amazing/Welcome/Character/Hair/ShortGinger.png"
+                    },
+                    {
+                        StackIndex: 4,
+                        File: "./Amazing/Welcome/Character/Clothes/RedFootballKit.png"
+                    }
+                ]
+            },
+            {
+                Index: 2,
+                Type: "RightPage",
+                PageTemplateId: "WelcomeRight",
+                Layers: [
+                    {
+                        StackIndex: 0,
+                        File: "./Amazing/Welcome/DefaultRight.png"
+                    },
+                    {
+                        StackIndex: 1,
+                        Text: "Michael was an amazing little boy"
+                    }
+                ]
+            }
+        ]
+    }
+}

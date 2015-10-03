@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0287387-B396-496C-89C8-47203A04D178}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookEngine</RootNamespace>
+    <AssemblyName>BookEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookTemplate.cs" />
+    <Compile Include="BookTemplates\Book\BestSwimmer\BestSwimmerTemplateDefinition.cs" />
+    <Compile Include="BookTemplates\Book\TestBook\TestBookTemplateDefinition.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordReplaceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\base_900_506.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p1.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p10a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p10b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p10c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p10d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p10e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p11.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p12a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p12b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p13a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p13b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p13c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p13d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p14.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p15a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p15b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p15c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p15d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p15e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p16.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p17a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p17b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p17c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p17d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p17e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p18f.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p19.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p2a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p2b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p2c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p2d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p2e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p3.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p4a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p4b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p4c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p4d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p4e.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p5.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p6a.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p6b.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p6c.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p6d.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p7.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p8.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\p9.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\base_900_506.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_african.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_asian.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_black_hair.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_blonde_hair.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_brown_hair.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_caucasian.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\boy_ginger_hair.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\girl_basic.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\house_background_900_506.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\park_background_900_506.png" />
+    <Content Include="BookTemplates\Book\TestBook\Images\sea_background_900_506.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Output\TestBook\BookTemplate.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,28 @@
+﻿@model ImageSandpit.Models.ImageSandpitModel
+
+@{
+    ViewBag.Title = "Image Sandpit Details";
+}
+
+<div>
+    <div class="panel-title">
+        <h1>Hello</h1>
+    </div>
+    <div class="panel-default">
+        <div class="row">
+            <div class="col-lg-4">Image1 Label:</div>
+            <div class="col-lg-8">@Html.Label(Model.Image1)</div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-4">Image1 Image:</div>
+            <div class="col-lg-8"><img src=@Model.Image1 /></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">Image hardcoded:</div>
+            <div class="col-lg-8"><img src="~/Images/rabbit_new.jpg" /></div>
+        </div>
+    </div>
+</div>
+

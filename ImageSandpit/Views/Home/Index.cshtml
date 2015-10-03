@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>Urban Tales</h2>
+    <img src="~/Images/urbantales.png" style="width:200px;" />
+    <p class="lead">Image Sandpit - Prototyping book generator for Urban Tales</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Image Sandpit</h2>
+        <p>Click Here</p>
+        <p>@Html.ActionLink("RABBIT ON BEACH", "HelloAction", "ImageSandpit" )</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Test Book</h2>
+        <p>Create Test Book</p>
+        <p>@Html.ActionLink("CREATE TEST BOOK", "Create", "TestBook")</p>
+    </div>
+
+</div>

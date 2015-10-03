@@ -1,0 +1,275 @@
+{"Id":"TestBook","OutputFolder":"C:\\Projects\\ImageSandpit\\BookEngine\\Output\\TestBook\\","PageHeight":506,"PageTemplates":[{"BaseImageLayer":{"Conditions":null,"File":"base_900_506.png","Id":"HouseBaseImage","StackOrder":-1},"Conditions":null,"Id":"HousePage","ImageLayers":[{"Conditions":null,"File":"house_background_900_506.png","Id":"HouseImage","StackOrder":1},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Caucasian"}],"File":"boy_caucasian.png","Id":"CaucasianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"African"}],"File":"boy_african.png","Id":"AfricanBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Asian"}],"File":"boy_asian.png","Id":"AsianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Girl"}],"File":"girl_basic.png","Id":"GirlImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Black"}],"File":"boy_black_hair.png","Id":"BlackHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Brown"}],"File":"boy_brown_hair.png","Id":"BrownHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Blonde"}],"File":"boy_blonde_hair.png","Id":"BlondeHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Ginger"}],"File":"boy_ginger_hair.png","Id":"GingerHairImage","StackOrder":0}],"Index":0,"OptionId":0,"OptionName":null,"TextLayers":[{"Id":"HouseText","StackOrder":1,"Text":"{0} leaves {1} house and is ready for an adventure!","WordReplacements":[0,1],"X":20,"Y":20}]},{"BaseImageLayer":{"Conditions":null,"File":"base_900_506.png","Id":"ParkBaseImage","StackOrder":-1},"Conditions":null,"Id":"ParkPage","ImageLayers":[{"Conditions":null,"File":"park_background_900_506.png","Id":"ParkImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Caucasian"}],"File":"boy_caucasian.png","Id":"CaucasianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"African"}],"File":"boy_african.png","Id":"AfricanBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Asian"}],"File":"boy_asian.png","Id":"AsianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Girl"}],"File":"girl_basic.png","Id":"GirlImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Black"}],"File":"boy_black_hair.png","Id":"BlackHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Brown"}],"File":"boy_brown_hair.png","Id":"BrownHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Blonde"}],"File":"boy_blonde_hair.png","Id":"BlondeHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Ginger"}],"File":"boy_ginger_hair.png","Id":"GingerHairImage","StackOrder":0}],"Index":1,"OptionId":0,"OptionName":null,"TextLayers":[{"Id":"ParkText","StackOrder":0,"Text":"Perhaps {0} would like a visit to the park?","WordReplacements":[3],"X":200,"Y":10}]},{"BaseImageLayer":{"Conditions":null,"File":"base_900_506.png","Id":"SeaBaseImage","StackOrder":-1},"Conditions":null,"Id":"SeaPage","ImageLayers":[{"Conditions":null,"File":"sea_background_900_506.png","Id":"SeaImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Caucasian"}],"File":"boy_caucasian.png","Id":"CaucasianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"African"}],"File":"boy_african.png","Id":"AfricanBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Boy"},{"Key":"SkinColour","Value":"Asian"}],"File":"boy_asian.png","Id":"AsianBoyImage","StackOrder":0},{"Conditions":[{"Key":"Gender","Value":"Girl"}],"File":"girl_basic.png","Id":"GirlImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Black"}],"File":"boy_black_hair.png","Id":"BlackHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Brown"}],"File":"boy_brown_hair.png","Id":"BrownHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Blonde"}],"File":"boy_blonde_hair.png","Id":"BlondeHairImage","StackOrder":0},{"Conditions":[{"Key":"HairColour","Value":"Ginger"}],"File":"boy_ginger_hair.png","Id":"GingerHairImage","StackOrder":0}],"Index":2,"OptionId":0,"OptionName":null,"TextLayers":[{"Id":"ParkText1","StackOrder":0,"Text":"{0} stepped into a lake. Oh my God!!","WordReplacements":[4],"X":10,"Y":10},{"Id":"ParkText2","StackOrder":0,"Text":"{0}'s downing!","WordReplacements":[0],"X":10,"Y":78}]}],"PageWidth":900,"TemplateFolder":"C:\\Projects\\ImageSandpit\\BookEngine\\BookTemplates\\Book\\TestBook\\","TemplateImagesFolder":"C:\\Projects\\ImageSandpit\\BookEngine\\BookTemplates\\Book\\TestBook\\Images\\"}              "Id": "ParkBaseImage",
+                "StackOrder": -1
+            },
+            "Id": "ParkPage",
+            "ImageLayers": [
+                {
+                    "Conditions": null,
+                    "File": "park_background_900_506.png",
+                    "Id": "ParkImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "Caucasian"
+                        }
+                    ],
+                    "File": "boy_caucasian.png",
+                    "Id": "CaucasianBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "African"
+                        }
+                    ],
+                    "File": "boy_african.png",
+                    "Id": "AfricanBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "Asian"
+                        }
+                    ],
+                    "File": "boy_asian.png",
+                    "Id": "AsianBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Girl"
+                        }
+                    ],
+                    "File": "girl_basic.png",
+                    "Id": "GirlImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Black"
+                        }
+                    ],
+                    "File": "boy_black_hair.png",
+                    "Id": "BlackHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Brown"
+                        }
+                    ],
+                    "File": "boy_brown_hair.png",
+                    "Id": "BrownHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Blonde"
+                        }
+                    ],
+                    "File": "boy_blonde_hair.png",
+                    "Id": "BlondeHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Ginger"
+                        }
+                    ],
+                    "File": "boy_ginger_hair.png",
+                    "Id": "GingerHairImage",
+                    "StackOrder": 0
+                }
+            ],
+            "Index": 1,
+            "OptionId": 0,
+            "OptionName": null,
+            "TextLayers": [
+                {
+                    "Id": "ParkText",
+                    "StackOrder": 0,
+                    "Text": "Perhaps {0} would like a visit to the park?",
+                    "WordReplacements": [
+                        3
+                    ],
+                    "X": 200,
+                    "Y": 10
+                }
+            ]
+        },
+        {
+            "BaseImageLayer": {
+                "Conditions": null,
+                "File": "base_900_506.png",
+                "Id": "SeaBaseImage",
+                "StackOrder": -1
+            },
+            "Id": "SeaPage",
+            "ImageLayers": [
+                {
+                    "Conditions": null,
+                    "File": "sea_background_900_506.png",
+                    "Id": "SeaImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "Caucasian"
+                        }
+                    ],
+                    "File": "boy_caucasian.png",
+                    "Id": "CaucasianBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "African"
+                        }
+                    ],
+                    "File": "boy_african.png",
+                    "Id": "AfricanBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Boy"
+                        },
+                        {
+                            "Key": "SkinColour",
+                            "Value": "Asian"
+                        }
+                    ],
+                    "File": "boy_asian.png",
+                    "Id": "AsianBoyImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "Gender",
+                            "Value": "Girl"
+                        }
+                    ],
+                    "File": "girl_basic.png",
+                    "Id": "GirlImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Black"
+                        }
+                    ],
+                    "File": "boy_black_hair.png",
+                    "Id": "BlackHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Brown"
+                        }
+                    ],
+                    "File": "boy_brown_hair.png",
+                    "Id": "BrownHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Blonde"
+                        }
+                    ],
+                    "File": "boy_blonde_hair.png",
+                    "Id": "BlondeHairImage",
+                    "StackOrder": 0
+                },
+                {
+                    "Conditions": [
+                        {
+                            "Key": "HairColour",
+                            "Value": "Ginger"
+                        }
+                    ],
+                    "File": "boy_ginger_hair.png",
+                    "Id": "GingerHairImage",
+                    "StackOrder": 0
+                }
+            ],
+            "Index": 2,
+            "OptionId": 0,
+            "OptionName": null,
+            "TextLayers": [
+                {
+                    "Id": "ParkText1",
+                    "StackOrder": 0,
+                    "Text": "{0} stepped into a lake. Oh my God!!",
+                    "WordReplacements": [
+                        4
+                    ],
+                    "X": 10,
+                    "Y": 10
+                },
+                {
+                    "Id": "ParkText2",
+                    "StackOrder": 0,
+                    "Text": "{0}'s downing!",
+                    "WordReplacements": [
+                        0
+                    ],
+                    "X": 10,
+                    "Y": 78
+                }
+            ]
+        }
+    ],
+    "PageWidth": 900,
+    "TemplateFolder": "C:\\Projects\\ImageSandpit\\BookEngine\\BookTemplates\\Book\\TestBook\\",
+    "TemplateImagesFolder": "C:\\Projects\\ImageSandpit\\BookEngine\\BookTemplates\\Book\\TestBook\\Images\\"
+}

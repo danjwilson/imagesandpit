@@ -1,0 +1,25 @@
+﻿@model ImageSandpit.Models.TestBookCreateViewModel
+
+@{
+    ViewBag.Title = "Test Book";
+}
+
+<div>
+    <div class="panel-title">
+        <h1>Create Test Book</h1>
+    </div>
+
+    <div id="divOptions" class="panel-body, jumbotron">
+    @using (Html.BeginForm("Create", "TestBook", FormMethod.Post, new { id = "formCreate" }))
+    {
+        <div class="row"><div class="col-md-4"><label>CustomerId:</label></div><div class="col-md-8">@Html.TextBoxFor(i => i.CustomerId)</div></div>
+        <div class="row"><div class="col-md-4"><label>Name:</label></div><div class="col-md-8">@Html.TextBoxFor(i => i.Name)</div></div>
+        <div class="row"><div class="col-md-4"><label>Gender:</label></div><div class="col-md-8">@Html.DropDownListFor(i => i.Gender, new SelectList(Model.GenderOptions, "Value", "Text"))</div></div>
+        <div class="row"><div class="col-md-4"><label>Hair Colour:</label></div><div class="col-md-8">@Html.DropDownListFor(i => i.HairColour, new SelectList(Model.HairColourOptions, "Value", "Text"))</div></div>
+        <div class="row"><div class="col-md-4"><label>Skin Colour:</label></div><div class="col-md-8">@Html.DropDownListFor(i => i.SkinColour, new SelectList(Model.SkinColourOptions, "Value", "Text"))</div></div>
+        <div class="row"><div class="col-md-4"><label>Personal Message:</label></div><div class="col-md-8">@Html.TextBoxFor(i => i.PersonalMessage)</div></div>
+        <div class="row"><input type="submit" value="Create" /></div>
+    }
+    </div>
+
+</div>

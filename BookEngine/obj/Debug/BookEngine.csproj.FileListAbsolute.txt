@@ -1,0 +1,5 @@
+c:\Projects\ImageSandpit\BookEngine\bin\Debug\BookEngine.dll
+c:\Projects\ImageSandpit\BookEngine\bin\Debug\BookEngine.pdb
+c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.dll
+c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.pdb
+c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.csprojResolveAssemblyReference.cache
