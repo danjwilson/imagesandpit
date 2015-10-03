@@ -49,7 +49,7 @@ namespace BookEngine
             pageTemplates.Add(new PageTemplate
             {
                 Id = "HousePage",
-                OptionId = 0,
+                OptionId = "None",
                 Index = 0,
                 BaseImageLayer = new ImageLayer { Id = "HouseBaseImage", StackOrder = -1, File = "base_900_506.png" },
                 ImageLayers = new List<ImageLayer> { 
@@ -66,7 +66,7 @@ namespace BookEngine
             pageTemplates.Add(new PageTemplate
             {
                 Id = "ParkPage",
-                OptionId = 0,
+                OptionId = "None",
                 Index = 1,
                 BaseImageLayer = new ImageLayer { Id = "ParkBaseImage", StackOrder = -1, File = "base_900_506.png" },
                 ImageLayers = new List<ImageLayer> { 
@@ -83,7 +83,7 @@ namespace BookEngine
             pageTemplates.Add(new PageTemplate
             {
                 Id = "SeaPage",
-                OptionId = 0,
+                OptionId = "None",
                 Index = 2,
                 BaseImageLayer = new ImageLayer { Id = "SeaBaseImage", StackOrder = -1, File = "base_900_506.png" },
                 ImageLayers = new List<ImageLayer> { 

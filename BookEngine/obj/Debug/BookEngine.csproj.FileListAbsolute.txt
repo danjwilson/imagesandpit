@@ -3,3 +3,7 @@ c:\Projects\ImageSandpit\BookEngine\bin\Debug\BookEngine.pdb
 c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.dll
 c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.pdb
 c:\Projects\ImageSandpit\BookEngine\obj\Debug\BookEngine.csprojResolveAssemblyReference.cache
+C:\git\imagesandpit\BookEngine\obj\Debug\BookEngine.dll
+C:\git\imagesandpit\BookEngine\bin\Debug\BookEngine.dll
+C:\git\imagesandpit\BookEngine\bin\Debug\BookEngine.pdb
+C:\git\imagesandpit\BookEngine\obj\Debug\BookEngine.pdb

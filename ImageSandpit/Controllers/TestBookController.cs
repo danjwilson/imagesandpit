@@ -49,7 +49,7 @@ namespace ImageSandpit.Controllers
 
             //TestBookTemplateDefinition definition = new TestBookTemplateDefinition();
             BestSwimmerTemplateDefinition definition = new BestSwimmerTemplateDefinition();
-            Book myBook = Builder.BuildBook(definition.Template, characterOptions);
+            Book myBook = Builder.BuildBook(definition.Template, characterOptions, null);
 
             TestBookDetailViewModel viewModel = new TestBookDetailViewModel(myBook);
             return View(viewModel);

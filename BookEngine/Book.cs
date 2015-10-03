@@ -31,7 +31,7 @@ namespace BookEngine
         public int Index { get; set; }
         public string Type { get; set; }
         public string TemplateId { get; set; }
-        public int TemplateOptionId { get; set; }
+        public string TemplateOptionId { get; set; }
         public string ImageFile { get; set; }
         public string ImageFileRelative { get; set; }
     }
