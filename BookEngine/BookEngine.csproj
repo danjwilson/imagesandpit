@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="BookTemplate.cs" />
+    <Compile Include="BookTemplateHelper.cs" />
     <Compile Include="BookTemplates\Book\BestSwimmer\BestSwimmerTemplateDefinition.cs" />
     <Compile Include="BookTemplates\Book\TestBook\TestBookTemplateDefinition.cs" />
     <Compile Include="Builder.cs" />

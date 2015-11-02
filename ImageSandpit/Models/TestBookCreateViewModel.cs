@@ -14,16 +14,19 @@ namespace ImageSandpit.Models
         public IEnumerable<SelectListItem> GenderOptions { get; set; }
         public IEnumerable<SelectListItem> HairColourOptions { get; set; }
         public IEnumerable<SelectListItem> SkinColourOptions { get; set; }
+        public IEnumerable<SelectListItem> LovePageOptions { get; set; }
         public SelectListItem Gender { get; set; }
         public SelectListItem HairColour { get; set; }
         public SelectListItem SkinColour { get; set; }
+        public SelectListItem LovePage { get; set; }
         public string PersonalMessage { get; set; }
 
-        public TestBookCreateViewModel(IEnumerable<SelectListItem> genderOptions, IEnumerable<SelectListItem> hairColourOptions, IEnumerable<SelectListItem> skinColourOptions)
+        public TestBookCreateViewModel(IEnumerable<SelectListItem> genderOptions, IEnumerable<SelectListItem> hairColourOptions, IEnumerable<SelectListItem> skinColourOptions, IEnumerable<SelectListItem> lovePageOptions)
         {
             GenderOptions = genderOptions;
             HairColourOptions = hairColourOptions;
             SkinColourOptions = skinColourOptions;
+            LovePageOptions = lovePageOptions;
         }
     }
 }

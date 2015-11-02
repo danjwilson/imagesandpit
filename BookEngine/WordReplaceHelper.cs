@@ -7,61 +7,86 @@ using System.Threading.Tasks;
 
 namespace BookEngine
 {
-    public enum CharacterWordPlaceholder
-    {
-        Name, HisHerLower, HisHerTitle, HeSheLower, HeSheTitle, HimHerLower, HimHerTitle, BoyGirlLower, BoyGirlTitle
-        // With enums, Json serialization doesn't use the name, but the int value. Look at this: http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Converters_StringEnumConverter.htm
-    };
-
     public static class WordReplaceHelper
     {
-        public static string Replace(Character character, string text, List<CharacterWordPlaceholder> placeholders)
+        public static string Replace(Character character, string text)
         {
-            Dictionary<int, string> replacementWords = new Dictionary<int,string>();
+            List<string> words = text.Split(' ').ToList<string>();
+            List<string> alreadyReplaced = new List<string>();
 
-            // Determine what are the replacement words
-            int i = 0;
-
-            foreach (CharacterWordPlaceholder placeholder in placeholders)
+            foreach(string word in words)
             {
-                text = text.Replace("{" + i.ToString() + "}", LookupWord(character, placeholder));
-                i++;
+                if (word.StartsWith("{") && word.EndsWith("}") && !alreadyReplaced.Contains(word))
+                { 
+                    text = text.Replace(word, LookupWord(character, word));
+                    alreadyReplaced.Add(word);
+                }
             }
 
             return text;
         }
 
-        private static string LookupWord(Character character, CharacterWordPlaceholder placeholder)
+        private static string LookupWord(Character character, string word)
         {
-            string word = "[UNKNOWN]";
-            bool isMale = (character.Gender.ToLower() == "boy" || character.Gender.ToLower() == "man" || character.Gender.ToLower() == "m");
+            string replacement = "[REPLACEMENT ERROR]";
+            bool isMale = (character.Gender.ToUpper() == "BOY" || character.Gender.ToLower() == "MAN" || character.Gender.ToLower() == "M");
 
-            switch (placeholder)
+            switch (word)
             {
-                case CharacterWordPlaceholder.Name:
-                    word = character.Name;
+                case "{NAME}":
+                    replacement = character.Name.ToUpper();
                     break;
-                case CharacterWordPlaceholder.HisHerLower:
-                    word = isMale ? "his" : "her";
+                case "{Name}":
+                    replacement = character.Name;
                     break;
-                case CharacterWordPlaceholder.HisHerTitle:
-                    word = isMale ? "His" : "Her";
+                case "{HIS}":
+                case "{HER}":
+                    replacement = isMale ? "HIS" : "HER";
                     break;
-                case CharacterWordPlaceholder.HeSheLower:
-                    word = isMale ? "he" : "she";
+                case "{his}":
+                case "{her}":
+                    replacement = isMale ? "his" : "her";
                     break;
-                case CharacterWordPlaceholder.HeSheTitle:
-                    word = isMale ? "He" : "She";
+                case "{His}":
+                case "{Her}":
+                    replacement = isMale ? "His" : "Her";
                     break;
-                case CharacterWordPlaceholder.BoyGirlLower:
-                    word = isMale ? "boy" : "girl";
+                case "{HIM}":
+                    replacement = isMale ? "HIM" : "HER";
                     break;
-                case CharacterWordPlaceholder.BoyGirlTitle:
-                    word = isMale ? "Boy" : "Girl";
+                case "{him}":
+                    replacement = isMale ? "him" : "her";
+                    break;
+                case "{Him}":
+                    replacement = isMale ? "Him" : "Her";
+                    break;
+                case "{HE}":
+                case "{SHE}":
+                    replacement = isMale ? "HE" : "SHE";
+                    break;
+                case "{he}":
+                case "{she}":
+                    replacement = isMale ? "he" : "she";
+                    break;
+                case "{He}":
+                case "{She}":
+                    replacement = isMale ? "He" : "She";
+                    break;
+                case "{BOY}":
+                case "{GIRL}":
+                    replacement = isMale ? "BOY" : "GIRL";
+                    break;
+                case "{boy}":
+                case "{girl}":
+                    replacement = isMale ? "boy" : "girl";
+                    break;
+                case "{Boy}":
+                case "{Girl}":
+                    replacement = isMale ? "Boy" : "Girl";
                     break;
             }
 
-            return word;
+            return replacement;
         }
     }
 }

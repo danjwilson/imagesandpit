@@ -8,6 +8,13 @@ using System.Runtime.Serialization;
 
 namespace BookEngine
 {
+    public class OptionItem
+    {
+        public string Value { get; set; }
+        public string Text { get; set; }
+        public bool IsDefault { get; set; }
+    }
+
     public class BookTemplate
     {
         public string Id { get; set; }
@@ -44,7 +51,6 @@ namespace BookEngine
         public string Id { get; set; }
         public int StackOrder { get; set; }
         public string Text { get; set; }
-        public List<CharacterWordPlaceholder> WordReplacements { get; set; }
         [IgnoreDataMemberAttribute]
         public Font Font { get; set; }
         [IgnoreDataMemberAttribute]

@@ -7,39 +7,78 @@ using System.IO;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Runtime.Serialization.Json;
 
 namespace BookEngine
 {
     public static class Builder
     {
-        public static Book BuildBook(BookTemplate bookTemplate, Dictionary<string, string> characterOptions, Dictionary<string, string> pageOptions)
+        public static Dictionary<string, List<OptionItem>> GetCharacterOptionItems(string bookTemplateId)
         {
+            // TO DO: Get option items by deserializing JSON
+            Dictionary<string, List<OptionItem>> characterOptions = new Dictionary<string, List<OptionItem>>();
+            switch (bookTemplateId.ToUpper())
+            {
+                case "BESTSWIMMER":
+                    characterOptions = BestSwimmerDefinition.GetCharacterOptionItems();
+                    break;
+                default:
+                    characterOptions = BestSwimmerDefinition.GetCharacterOptionItems();
+                    break;
+            }
 
-            // **********                              *********** //
-            // ********* EXTRA : SERIALIZE BOOK TEMPLATE ********* //
-            // **********                              *********** //
-            FileStream stream1 = new FileStream( bookTemplate.OutputFolder + "BookTemplate.json", FileMode.OpenOrCreate);
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(BookTemplate));
-            ser.WriteObject(stream1, bookTemplate);
-            // **********                              *********** //
-            // **********                              *********** //
-            // **********                              *********** //
+            return characterOptions;
+        }
 
+        public static Dictionary<string, List<OptionItem>> GetPageOptionItems(string bookTemplateId)
+        {
+            // TO DO: Get option items by deserializing JSON
+            Dictionary<string, List<OptionItem>> pageOptions = new Dictionary<string, List<OptionItem>>();
+            switch (bookTemplateId.ToUpper())
+            {
+                case "BESTSWIMMER":
+                    pageOptions = BestSwimmerDefinition.GetPageOptionItems();
+                    break;
+                default:
+                    pageOptions = BestSwimmerDefinition.GetPageOptionItems();
+                    break;
+            }
+
+            return pageOptions;
+        }
+
+        public static Book BuildBook(string bookTemplateId, Dictionary<string, string> selectedCharacterOptions, Dictionary<string, string> selectedPageOptions)
+        {
+            // TO DO: Get book template by deserializing JSON
+            BookTemplate bookTemplate;
+            switch(bookTemplateId.ToUpper())
+            {
+                case "BESTSWIMMER":
+                    bookTemplate = BestSwimmerDefinition.GetTemplate();
+                    break;
+                default:
+                    bookTemplate = BestSwimmerDefinition.GetTemplate();
+                    break;                    
+            }
+
+            return Builder.BuildBook(bookTemplate, selectedCharacterOptions, selectedPageOptions);
+        }
+
+        public static Book BuildBook(BookTemplate bookTemplate, Dictionary<string, string> selectedCharacterOptions, Dictionary<string, string> selectedPageOptions)
+        {
             Book book = new Book
             {
-                CustomerId = characterOptions["CustomerId"], 
-                PersonalMessage = characterOptions["PersonalMessage"],
+                CustomerId = selectedCharacterOptions["CustomerId"],
+                PersonalMessage = selectedCharacterOptions["PersonalMessage"],
                 TemplateId = bookTemplate.Id
             };
 
             // Create character
             book.Character = new Character
             { 
-                Name = characterOptions["Name"], 
-                Gender = characterOptions["Gender"],
-                HairColour = characterOptions["HairColour"], 
-                SkinColour = characterOptions["SkinColour"]
+                Name = selectedCharacterOptions["Name"], 
+                Gender = selectedCharacterOptions["Gender"],
+                HairColour = selectedCharacterOptions["HairColour"], 
+                SkinColour = selectedCharacterOptions["SkinColour"]
             };
 
             // Create pages based on template ** Currently assuming there is only one option for each page
@@ -50,6 +89,8 @@ namespace BookEngine
                 // Check to see if this page template is the selected option
                 // ** // TO DO // ** //
                 // >>>> USE pageOptions !!!! <<<< //
+                if (pageTemplate.OptionCondition.Value != null && pageTemplate.OptionCondition.Value != selectedPageOptions[pageTemplate.OptionCondition.Key])
+                    continue;
 
                 Page page = new Page();
                 page.Index = pageTemplate.Index;
@@ -71,7 +112,7 @@ namespace BookEngine
                     {
                         foreach (KeyValuePair<string, string> condition in imageLayer.Conditions)
                         {
-                            if (characterOptions[condition.Key] != condition.Value)
+                            if (selectedCharacterOptions[condition.Key] != condition.Value)
                             {
                                 include = false;
                                 break;
@@ -88,10 +129,7 @@ namespace BookEngine
                 List<TextLayer> processedTextLayers = new List<TextLayer>();
                 foreach (TextLayer textLayer in pageTemplate.TextLayers)
                 {
-                    if (textLayer.WordReplacements != null)
-                    {
-                        textLayer.Text = WordReplaceHelper.Replace(book.Character, textLayer.Text, textLayer.WordReplacements);
-                    }
+                    textLayer.Text = WordReplaceHelper.Replace(book.Character, textLayer.Text);
                     processedTextLayers.Add(textLayer);
                 }
 
@@ -99,7 +137,7 @@ namespace BookEngine
                 // Physically create the layers and add page
                 Image newPageImage = AddLayers(bookTemplate.TemplateImagesFolder, page.ImageFile, processedImageLayers, processedTextLayers, bookTemplate.PageWidth, bookTemplate.PageHeight);
                 newPageImage.Save(page.ImageFile);
-                newPageImage.Save(page.ImageFileRelative.Replace("..", @"C:\Projects\ImageSandpit\ImageSandpit")); // << + duplicated for website access [**to be reviewed**]
+                newPageImage.Save(page.ImageFileRelative.Replace("..", @"C:\git\danjwilson\ImageSandpit\ImageSandpit")); // << + duplicated for website access [**to be reviewed**]
 
                 book.Pages.Add(page);
             }

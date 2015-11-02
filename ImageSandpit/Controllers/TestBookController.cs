@@ -13,43 +13,57 @@ namespace ImageSandpit.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            // Sex and Hair colour options
-            IEnumerable<SelectListItem> genderOptions = new List<SelectListItem> { 
-                new SelectListItem { Value = "Boy", Text = "Boy", }, 
-                new SelectListItem { Value = "Girl", Text = "Girl" }};
-            IEnumerable<SelectListItem> hairColourOptions = new List<SelectListItem> {
-                new SelectListItem { Value = "Blonde", Text = "Blonde" }, 
-                new SelectListItem { Value = "Brown", Text = "Brown", }, 
-                new SelectListItem { Value = "Black", Text = "Black" }, 
-                new SelectListItem { Value = "Ginger", Text = "Ginger" }};
-            IEnumerable<SelectListItem> skinColourOptions = new List<SelectListItem> {
-                new SelectListItem { Value = "Caucasian", Text = "Caucasian" }, 
-                new SelectListItem { Value = "African", Text = "African", }, 
-                new SelectListItem { Value = "Asian", Text = "Asian" }};
+            // Get the character option items
+            Dictionary<string, List<OptionItem>> characterOptionItems = Builder.GetCharacterOptionItems("BestSwimmer");
+            IEnumerable<SelectListItem> genderOptionItems = ConvertToSelectListItems(characterOptionItems["Gender"]);
+            IEnumerable<SelectListItem> hairColourOptionItems = ConvertToSelectListItems(characterOptionItems["HairColour"]);
+            IEnumerable<SelectListItem> skinColourOptionItems = ConvertToSelectListItems(characterOptionItems["SkinColour"]);            
+            
+            // Get the page option items
+            Dictionary<string, List<OptionItem>> pageOptionItems = Builder.GetPageOptionItems("BestSwimmer");
+            IEnumerable<SelectListItem> lovePageOptionItems = ConvertToSelectListItems(pageOptionItems["Love"]);
 
-            TestBookCreateViewModel viewModel = new TestBookCreateViewModel(genderOptions, hairColourOptions, skinColourOptions);
+            TestBookCreateViewModel viewModel = new TestBookCreateViewModel(genderOptionItems, hairColourOptionItems, skinColourOptionItems, lovePageOptionItems);
             return View(viewModel);
         }
 
-        [HttpPost]
-        public ActionResult Create(string CustomerId, string Name, string Gender, string HairColour, string SkinColour, string PersonalMessage)
+        private IEnumerable<SelectListItem> ConvertToSelectListItems(List<OptionItem> optionItems)
         {
-            return RedirectToAction("Detail", new { CustomerId = CustomerId, Name = Name, Gender = Gender, HairColour = HairColour, SkinColour = SkinColour, PersonalMessage = PersonalMessage });
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            foreach (OptionItem item in optionItems)
+            {
+                selectListItems.Add(new SelectListItem { Value = item.Value, Text = item.Text });
+            }
+
+            return selectListItems;
         }
 
-        public ActionResult Detail(string CustomerId, string Name, string Gender, string HairColour, string SkinColour, string PersonalMessage)
+        public ActionResult SerializeBookTemplate()
         {
-            Dictionary<string, string> characterOptions = new Dictionary<string, string>();
-            characterOptions.Add("CustomerId", CustomerId);
-            characterOptions.Add("Name", Name);
-            characterOptions.Add("Gender", Gender);
-            characterOptions.Add("HairColour", HairColour);
-            characterOptions.Add("SkinColour", SkinColour);
-            characterOptions.Add("PersonalMessage", PersonalMessage);
+            BookTemplateHelper.Serialize(BestSwimmerDefinition.GetTemplate());
+            return RedirectToAction("Create");
+        }
 
-            //TestBookTemplateDefinition definition = new TestBookTemplateDefinition();
-            BestSwimmerTemplateDefinition definition = new BestSwimmerTemplateDefinition();
-            Book myBook = Builder.BuildBook(definition.Template, characterOptions, null);
+        [HttpPost]
+        public ActionResult Create(string CustomerId, string Name, string Gender, string HairColour, string SkinColour, string PersonalMessage, string LovePage)
+        {
+            return RedirectToAction("Detail", new { CustomerId = CustomerId, Name = Name, Gender = Gender, HairColour = HairColour, SkinColour = SkinColour, PersonalMessage = PersonalMessage, LovePage = LovePage });
+        }
+
+        public ActionResult Detail(string CustomerId, string Name, string Gender, string HairColour, string SkinColour, string PersonalMessage, string LovePage)
+        {
+            Dictionary<string, string> selectedCharacterOptions = new Dictionary<string, string>();
+            selectedCharacterOptions.Add("CustomerId", CustomerId);
+            selectedCharacterOptions.Add("Name", Name);
+            selectedCharacterOptions.Add("Gender", Gender);
+            selectedCharacterOptions.Add("HairColour", HairColour);
+            selectedCharacterOptions.Add("SkinColour", SkinColour);            
+            selectedCharacterOptions.Add("PersonalMessage", PersonalMessage);
+
+            Dictionary<string, string> selectedPageOptions = new Dictionary<string, string>();
+            selectedPageOptions.Add("Love", LovePage);
+
+            Book myBook = Builder.BuildBook("BestSwimmer", selectedCharacterOptions, selectedPageOptions);
 
             TestBookDetailViewModel viewModel = new TestBookDetailViewModel(myBook);
             return View(viewModel);

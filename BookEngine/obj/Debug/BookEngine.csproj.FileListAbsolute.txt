@@ -7,3 +7,8 @@ C:\git\imagesandpit\BookEngine\obj\Debug\BookEngine.dll
 C:\git\imagesandpit\BookEngine\bin\Debug\BookEngine.dll
 C:\git\imagesandpit\BookEngine\bin\Debug\BookEngine.pdb
 C:\git\imagesandpit\BookEngine\obj\Debug\BookEngine.pdb
+C:\git\danjwilson\imagesandpit\BookEngine\bin\Debug\BookEngine.dll
+C:\git\danjwilson\imagesandpit\BookEngine\bin\Debug\BookEngine.pdb
+C:\git\danjwilson\imagesandpit\BookEngine\obj\Debug\BookEngine.dll
+C:\git\danjwilson\imagesandpit\BookEngine\obj\Debug\BookEngine.pdb
+C:\git\danjwilson\imagesandpit\BookEngine\obj\Debug\BookEngine.csprojResolveAssemblyReference.cache

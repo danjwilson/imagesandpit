@@ -56,8 +56,7 @@ namespace BookEngine
                 new ImageLayer { Id = "HouseImage", StackOrder = 1, File = "house_background_900_506.png" }
             },
                 TextLayers = new List<TextLayer> {
-                new TextLayer { Id = "HouseText", StackOrder = 1, Text = @"{0} leaves {1} house and is ready for an adventure!", 
-                    WordReplacements = new List<CharacterWordPlaceholder>{ CharacterWordPlaceholder.Name, CharacterWordPlaceholder.HisHerLower },
+                new TextLayer { Id = "HouseText", StackOrder = 1, Text = @"{Name} leaves {his} house and is ready for an adventure!", 
                     Font = myFont, Brush = myGreenBrush, X=20, Y=20 }
             }
             });
@@ -73,8 +72,7 @@ namespace BookEngine
                 new ImageLayer { Id = "ParkImage", File = "park_background_900_506.png" }
             },
                 TextLayers = new List<TextLayer> {
-                new TextLayer { Id = "ParkText", Text = @"Perhaps {0} would like a visit to the park?",
-                    WordReplacements = new List<CharacterWordPlaceholder>{ CharacterWordPlaceholder.HeSheLower }, 
+                new TextLayer { Id = "ParkText", Text = @"Perhaps {he} would like a visit to the park?",
                     Font = myFont, Brush = myGreenBrush, X=200, Y=10 }
             }
             });
@@ -90,11 +88,9 @@ namespace BookEngine
                 new ImageLayer { Id = "SeaImage", File = "sea_background_900_506.png" }
             },
                 TextLayers = new List<TextLayer>{
-                new TextLayer { Id = "ParkText1", Text = @"{0} stepped into a lake. Oh my God!!",
-                    WordReplacements = new List<CharacterWordPlaceholder>{ CharacterWordPlaceholder.HeSheTitle }, 
+                new TextLayer { Id = "ParkText1", Text = @"{He} stepped into a lake. Oh my God!!",
                     Font = myFont, Brush = myWhiteBrush, X=10, Y=10 },
-                new TextLayer { Id = "ParkText2", Text = @"{0}'s downing!",
-                    WordReplacements = new List<CharacterWordPlaceholder>{ CharacterWordPlaceholder.Name }, 
+                new TextLayer { Id = "ParkText2", Text = @"{Name}'s downing!",
                     Font = myBigFont, Brush = myWhiteBrush, X=10, Y=78 }
             }
             });
