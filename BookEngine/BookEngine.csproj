@@ -53,6 +53,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="BookTemplates\Book\BestSwimmer\Images\base_900_506.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\house_background_900_506.png" />
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p1.png" />
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p10a.png" />
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p10b.png" />
@@ -104,6 +105,8 @@
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p7.png" />
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p8.png" />
     <Content Include="BookTemplates\Book\BestSwimmer\Images\p9.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\park_background_900_506.png" />
+    <Content Include="BookTemplates\Book\BestSwimmer\Images\sea_background_900_506.png" />
     <Content Include="BookTemplates\Book\TestBook\Images\base_900_506.png" />
     <Content Include="BookTemplates\Book\TestBook\Images\boy_african.png" />
     <Content Include="BookTemplates\Book\TestBook\Images\boy_asian.png" />

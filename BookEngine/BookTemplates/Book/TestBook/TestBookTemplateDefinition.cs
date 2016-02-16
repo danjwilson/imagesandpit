@@ -27,9 +27,9 @@ namespace BookEngine
                 PageTemplates = CreatePageTemplates(), 
                 PageWidth = 900,
                 PageHeight = 506,
-                TemplateFolder = @"C:\Projects\ImageSandpit\BookEngine\BookTemplates\Book\TestBook\",
-                TemplateImagesFolder = @"C:\Projects\ImageSandpit\BookEngine\BookTemplates\Book\TestBook\Images\",
-                OutputFolder = @"C:\Projects\ImageSandpit\BookEngine\Output\TestBook\"
+                TemplateFolder = @"C:\git\imagesandpit\BookEngine\BookTemplates\Book\TestBook",
+                TemplateImagesFolder = @"C:\git\imagesandpit\BookEngine\BookTemplates\Book\TestBook\Images\",
+                OutputFolder = @"C:\git\imagesandpit\BookEngine\BookTemplates\Book\TestBook\"
             };
 
         }

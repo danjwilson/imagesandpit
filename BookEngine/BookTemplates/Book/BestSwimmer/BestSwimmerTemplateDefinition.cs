@@ -17,9 +17,9 @@ namespace BookEngine
                 PageTemplates = CreatePageTemplates(), 
                 PageWidth = 900,
                 PageHeight = 506,
-                TemplateFolder = @"C:\git\danjwilson\ImageSandpit\BookEngine\BookTemplates\Book\BestSwimmer\",
-                TemplateImagesFolder = @"C:\git\danjwilson\ImageSandpit\BookEngine\BookTemplates\Book\BestSwimmer\Images\",
-                OutputFolder = @"C:\git\danjwilson\ImageSandpit\BookEngine\Output\BestSwimmer\"
+                TemplateFolder = @"C:\git\ImageSandpit\BookEngine\BookTemplates\Book\BestSwimmer\",
+                TemplateImagesFolder = @"C:\git\ImageSandpit\BookEngine\BookTemplates\Book\BestSwimmer\Images\",
+                OutputFolder = @"C:\git\ImageSandpit\BookEngine\Output\BestSwimmer\"
             };
 
             return bookTemplate;
@@ -61,8 +61,10 @@ namespace BookEngine
         {
             // Text formating
             FontFamily myFontFamily = FontFamily.Families.First(x => x.Name == "Arial");
-            Font myFont = new Font(myFontFamily, 24, FontStyle.Regular);
+            Font myFont = new Font(myFontFamily, 23, FontStyle.Regular);
             Brush myBrush = new SolidBrush(System.Drawing.Color.DarkRed);
+            Brush myBrushBlack = new SolidBrush(System.Drawing.Color.Black);
+            Brush myBrushWhite = new SolidBrush(System.Drawing.Color.White);
 
             List<PageTemplate> pageTemplates = new List<PageTemplate>();
 
@@ -75,12 +77,12 @@ namespace BookEngine
                 OptionCondition = new KeyValuePair<string, string>(),
                 BaseImageLayer = new ImageLayer { Id = "p1_base", StackOrder = -1, File = "base_900_506.png" },
                 ImageLayers = new List<ImageLayer> { 
-                    new ImageLayer { Id = "p1_image", StackOrder = 1, File = "p1.png" }
+                    new ImageLayer { Id = "p1_image", StackOrder = 1, File = "house_background_900_506.png" }
                 },
                 TextLayers = new List<TextLayer> {
                 new TextLayer { Id = "p1_text", StackOrder = 1, 
                     Text = @"{Name} loved to swim! {He} adored everything about swimming. Getting ready to go. Gathering up the swimming clothes. Picking the fluffiest towel out of the closet. Searching for {his} favourite goggles. Not forgetting, shoving that luscious smelling shower gel for the steamy shower deep into {his} special swimming bag. {Name} just loooooooooooooovvvvvvvveeeeeeeeeedddddddd to swim!",
-                    Font = myFont, Brush = myBrush, X=0, Y=0 }
+                    Font = myFont, Brush = myBrushBlack, X=0, Y=0 }
                 }
             });
 
@@ -166,12 +168,12 @@ namespace BookEngine
                 OptionCondition = new KeyValuePair<string,string>("Love", "Strokes"),
                 BaseImageLayer = new ImageLayer { Id = "p2e_base", StackOrder = -1, File = "base_900_506.png" },
                 ImageLayers = new List<ImageLayer> { 
-                    new ImageLayer { Id = "p2e_image", StackOrder = 1, File = "p2e.png" }
+                    new ImageLayer { Id = "p2e_image", StackOrder = 1, File = "sea_background_900_506.png" }
                 },
                 TextLayers = new List<TextLayer> {
                 new TextLayer { Id = "p2e_text", StackOrder = 1, 
                     Text = @"{Name} loved practising all {his} favourite swimming strokes. To {Name} he wasn’t making {his} way across the local swimming pool. No! {he} was facing heavy competition against some of the world’s best swimmers in the Olympic Games in Splashire. {He} had never beaten the Splashirian King before! Despite him being a Merman, {Name} was determined to beat him to the finish line. The whole of the Splashire kingdom would then belong to {him}! The pressure was on!",
-                    Font = myFont, Brush = myBrush, X=0, Y=0 }
+                    Font = myFont, Brush = myBrushWhite, X=0, Y=0 }
                 }
             });
 
@@ -193,6 +195,49 @@ namespace BookEngine
                     Font = myFont, Brush = myBrush, X=0, Y=0 }
                 }
             });
+
+
+            // Add the character images (cheating here: using the same images for all pages)
+            ImageLayer boyCaucasian = new ImageLayer { Id = "CaucasianBoyImage", File = "boy_caucasian.png", Conditions = new Dictionary<string, string>() };
+            boyCaucasian.Conditions.Add("Gender", "Boy");
+            boyCaucasian.Conditions.Add("SkinColour", "Caucasian");
+
+            ImageLayer boyAfrican = new ImageLayer { Id = "AfricanBoyImage", File = "boy_african.png", Conditions = new Dictionary<string, string>() };
+            boyAfrican.Conditions.Add("Gender", "Boy");
+            boyAfrican.Conditions.Add("SkinColour", "African");
+
+            ImageLayer boyAsian = new ImageLayer { Id = "AsianBoyImage", File = "boy_asian.png", Conditions = new Dictionary<string, string>() };
+            boyAsian.Conditions.Add("Gender", "Boy");
+            boyAsian.Conditions.Add("SkinColour", "Asian");
+
+            ImageLayer girlBasic = new ImageLayer { Id = "GirlImage", File = "girl_basic.png", Conditions = new Dictionary<string, string>() };
+            girlBasic.Conditions.Add("Gender", "Girl");
+
+            ImageLayer blackHair = new ImageLayer { Id = "BlackHairImage", File = "boy_black_hair.png", Conditions = new Dictionary<string, string>() };
+            blackHair.Conditions.Add("HairColour", "Black");
+
+            ImageLayer brownHair = new ImageLayer { Id = "BrownHairImage", File = "boy_brown_hair.png", Conditions = new Dictionary<string, string>() };
+            brownHair.Conditions.Add("HairColour", "Brown");
+
+            ImageLayer blondeHair = new ImageLayer { Id = "BlondeHairImage", File = "boy_blonde_hair.png", Conditions = new Dictionary<string, string>() };
+            blondeHair.Conditions.Add("HairColour", "Blonde");
+
+            ImageLayer gingerHair = new ImageLayer { Id = "GingerHairImage", File = "boy_ginger_hair.png", Conditions = new Dictionary<string, string>() };
+            gingerHair.Conditions.Add("HairColour", "Ginger");
+
+
+            foreach (PageTemplate pageTemplate in pageTemplates)
+            {
+                pageTemplate.ImageLayers.Add(boyCaucasian);
+                pageTemplate.ImageLayers.Add(boyAfrican);
+                pageTemplate.ImageLayers.Add(boyAsian);
+                pageTemplate.ImageLayers.Add(girlBasic);
+                pageTemplate.ImageLayers.Add(blackHair);
+                pageTemplate.ImageLayers.Add(brownHair);
+                pageTemplate.ImageLayers.Add(blondeHair);
+                pageTemplate.ImageLayers.Add(gingerHair);
+            }
+
 
             return pageTemplates;
         }

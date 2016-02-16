@@ -137,7 +137,7 @@ namespace BookEngine
                 // Physically create the layers and add page
                 Image newPageImage = AddLayers(bookTemplate.TemplateImagesFolder, page.ImageFile, processedImageLayers, processedTextLayers, bookTemplate.PageWidth, bookTemplate.PageHeight);
                 newPageImage.Save(page.ImageFile);
-                newPageImage.Save(page.ImageFileRelative.Replace("..", @"C:\git\danjwilson\ImageSandpit\ImageSandpit")); // << + duplicated for website access [**to be reviewed**]
+                newPageImage.Save(page.ImageFileRelative.Replace("..", @"C:\git\ImageSandpit\ImageSandpit")); // << + duplicated for website access [**to be reviewed**]
 
                 book.Pages.Add(page);
             }
